@@ -13,7 +13,7 @@ You can download the archived files of the runtime binaries from [Releases](http
 | Android  | .so    | armeabi-v7a | `onnxruntime-runtime-android-arm-*.tgz` |
 | Android  | .so    | arm64-v8a   | `onnxruntime-runtime-android-arm64-*.tgz` |
 | Android  | .so    | x86_64      | `onnxruntime-runtime-android-x86_64-*.tgz` |
-| Android  | .aar   | armeabi-v7, aarm64-v8a, x86_64 | `onnxruntime-runtime-android-aar-*.tgz` |
+| Android  | .aar   | armeabi-v7, aarm64-v8a, x86_64 | unavailable since 1.21 |
 | iOS      | .xcframework | arm64, x86_64 | `onnxruntime-runtime-ios-xcframework-*.zip`|
 | Linux    | .so    | aarch64     | `onnxruntime-runtime-linux-arm64-*.tgz` |
 | Linux    | .so    | x64         | `onnxruntime-runtime-linux-x64-*.tgz` |

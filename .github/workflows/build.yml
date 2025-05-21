@@ -171,11 +171,6 @@ jobs:
         with:
           path: builder
 
-
-      - name: Apply patch
-        run: |
-          git apply --ignore-whitespace --reject --whitespace=fix --verbose ./builder/1_17_3_*.patch
-
       - uses: actions/setup-python@v5
         with: 
           python-version: ${{ env.ORT_PYTHON_VERSION }}
@@ -272,6 +267,7 @@ jobs:
           file_glob: true
 
   build-aar:
+    if: false
     strategy:
       fail-fast: false
       matrix:
@@ -279,7 +275,6 @@ jobs:
           - artifact_name: onnxruntime-android-aar-minimal
             os: ubuntu-22.04
             build_settings: builder/default_mobile_aar_build_settings.json
-            build_variant: mobile
             release_config: Release
           
     runs-on: ${{ matrix.os }}

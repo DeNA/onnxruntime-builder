@@ -92,7 +92,7 @@ jobs:
               CMAKE_SYSTEM_PROCESSOR=aarch64 # required for `cpuinfo`
             release_config: Release
           - artifact_name: onnxruntime-osx-arm64-minimal
-            os: macos-13
+            os: macos-15
             build_opts: |-
               --minimal_build
               --disable_ml_ops
@@ -103,7 +103,7 @@ jobs:
               CMAKE_SYSTEM_PROCESSOR=aarch64 # required for `cpuinfo`
             release_config: Release
           - artifact_name: onnxruntime-osx-x86_64-minimal
-            os: macos-13
+            os: macos-15
             build_opts: |-
               --minimal_build
               --disable_ml_ops
@@ -114,7 +114,7 @@ jobs:
               CMAKE_SYSTEM_PROCESSOR=x86_64 # required for `cpuinfo`
             release_config: Release
           - artifact_name: onnxruntime-osx-universal2-minimal
-            os: macos-13
+            os: macos-15
             build_opts: |-
               --minimal_build
               --disable_ml_ops
@@ -313,7 +313,7 @@ jobs:
       matrix:
         include:
           - artifact_name: onnxruntime-ios-xcframework-minimal
-            os: macos-13
+            os: macos-15
             build_settings: builder/default_mobile_ios_framework_build_settings.json
             release_config: MinSizeRel
           

@@ -4,6 +4,8 @@ Build [**minimal** ONNX Runtime](https://onnxruntime.ai/docs/build/custom.html#m
 
 This repository is derived from [VOICEVOX/onnxruntime-builder](https://github.com/VOICEVOX/onnxruntime-builder).
 
+**Caution! ONNX Runtime version 1.21 and above are not supported due to a critical bug, as described in [issue #24579](https://github.com/microsoft/onnxruntime/issues/24579).**
+
 ## Supported Platforms
 
 You can download the archived files of the runtime binaries from [Releases](https://github.com/stakemura/onnxruntime-builder/releases).

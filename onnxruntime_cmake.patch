@@ -1,0 +1,14 @@
+
+# Arch-dependent Link options:
+message("CMAKE_CXX_COMPILER_ID = ${CMAKE_CXX_COMPILER_ID}")
+if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    target_link_options(onnxruntime PUBLIC "-Wl,-map,onnxruntime.map")
+  else()
+    target_link_options(onnxruntime PUBLIC LINKER:-Map,onnxruntime.map)
+  endif()
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+  target_link_options(onnxruntime PUBLIC LINKER:-Map,onnxruntime.map)
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+  target_link_options(onnxruntime PRIVATE "/MAP:onnxruntime.map")
+endif()

@@ -171,10 +171,10 @@ jobs:
         with:
           path: builder
 
-
       - name: Apply patch
         run: |
           git apply --ignore-whitespace --reject --whitespace=fix --verbose ./builder/1_17_3_*.patch
+          cat cmake/onnxruntime.cmake ./builder/onnxruntime_cmake.patch > tmpfile && mv tmpfile cmake/onnxruntime.cmake
 
       - uses: actions/setup-python@v5
         with: 
@@ -261,6 +261,12 @@ jobs:
         run: |
           mv ./build/${{ matrix.artifact_name }} "${{ matrix.artifact_name }}-$ONNXRUNTIME_VERSION"
           tar cfz "${{ matrix.artifact_name }}-$ONNXRUNTIME_VERSION.tgz" "${{ matrix.artifact_name }}-$ONNXRUNTIME_VERSION/"
+
+      - name: Upload map file
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact_name }}-map
+          path: "**/onnxruntime.map"
 
       - name: Upload to Release
         if: env.RELEASE == 'true'
